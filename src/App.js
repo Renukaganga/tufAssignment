@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react';
 import Flashcard from './components/FlashCard';
 import axios from 'axios';
 import Dashboard from './components/Dashboard';
-import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 const App = () => {
   const [flashcards, setFlashcards] = useState([]);

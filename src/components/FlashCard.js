@@ -1,5 +1,5 @@
-// src/components/Flashcard.js
 import React, { useState } from 'react';
+import './Flashcard.css'; // Import the custom CSS
 
 const Flashcard = ({ flashcards }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,12 +18,14 @@ const Flashcard = ({ flashcards }) => {
   const flipCard = () => setFlipped(!flipped);
 
   return (
-    <div>
-      <div onClick={flipCard} style={{ cursor: 'pointer', border: '1px solid #ccc', padding: '20px', marginBottom: '10px' }}>
+    <div className="flashcard-container">
+      <div className="flashcard" onClick={flipCard}>
         {flipped ? flashcards[currentIndex].answer : flashcards[currentIndex].question}
       </div>
-      <button onClick={prevCard}>Previous</button>
-      <button onClick={nextCard}>Next</button>
+      <div className="button-group">
+        <button onClick={prevCard} className="flashcard-btn">Previous</button>
+        <button onClick={nextCard} className="flashcard-btn">Next</button>
+      </div>
     </div>
   );
 };
