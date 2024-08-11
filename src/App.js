@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import Flashcard from './components/FlashCard';
 import axios from 'axios';
+import Dashboard from './components/Dashboard';
+import './index.css'
 
 const App = () => {
   const [flashcards, setFlashcards] = useState([]);
@@ -17,6 +19,9 @@ const App = () => {
   return (
     <div>
       <h1>Flashcard Learning Tool</h1>
+      <div>
+        <Dashboard />
+      </div>
       {flashcards.length > 0 ? <Flashcard flashcards={flashcards} /> : <p>Loading...</p>}
     </div>
   );
